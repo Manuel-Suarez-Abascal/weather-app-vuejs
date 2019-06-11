@@ -2,7 +2,7 @@
   <div class="home">
     <h1>{{ msg }}</h1>
     <div class="home">
-      <p>A weather app built Vuejs & Open Weather App. Made by Manuel Abascal</p>
+      <p>A weather app built <a class="vuejs-link text-decoration-none" href="https://vuejs.org/" target="_blank" rel="noopener">Vuejs</a> & <a class="open-weather-api-link text-decoration-none" href="https://openweathermap.org/" target="_blank" rel="noopener">Open Weather App</a>. Made with &#10084;&#65039; by <a class="github-profile-link color-info text-decoration-none" href="https://github.com/Manuel-Suarez-Abascal" target="_blank" rel="noopener">Manuel Abascal</a></p>
 
       <!-- Input field value -->
       <label>Enter Canadian City: </label> 
@@ -38,6 +38,7 @@ export default {
     return {
       // current weather
       currentWeather: null,
+      errorMessage: null,
       // current city
       currentCity: 'Montreal',
       // current country
@@ -83,5 +84,33 @@ li {
 }
 a {
   color: #42b983;
+}
+
+/* Links styling */
+.vuejs-link {
+  color: #4fc08d;
+  &:hover {
+    color: #0d9155;
+  }
+}
+
+.github-profile-link {
+  color: #2c88e9;
+  &:hover {
+    color: #0357b1;
+  }
+}
+
+.open-weather-api-link {
+  color: #d26c22;
+  &:hover {
+    color: #c0560a;
+  }
+}
+
+
+
+.vuejs-link, .github-profile-link, .open-weather-api-link {
+  font-weight: bold;
 }
 </style>
