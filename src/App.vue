@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Home msg="Weather App" />
+    <Home msg="Worldwide Cities Weather App" />
   </div>
 </template>
 
