@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Home msg="Current Weather for Canadian Cities" />
+    <Home msg="Worldwide Cities Weather App" />
   </div>
 </template>
 

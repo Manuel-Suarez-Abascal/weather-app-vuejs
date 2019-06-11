@@ -1,7 +1,7 @@
 <template>
   <div class="home container">
     <h1>{{ msg }}</h1>
-    <div class="home">
+    <div class="home app-title my-3">
       <p class="m-2">A weather app built <a class="vuejs-link text-decoration-none" href="https://vuejs.org/" target="_blank" rel="noopener">Vuejs</a> & <a class="open-weather-api-link text-decoration-none" href="https://openweathermap.org/" target="_blank" rel="noopener">Open Weather App.</a></p>
 
       <p class="m-2">Made with &#10084;&#65039; by <a class="github-profile-link color-info text-decoration-none" href="https://github.com/Manuel-Suarez-Abascal" target="_blank" rel="noopener">Manuel Abascal</a></p>
@@ -17,13 +17,15 @@
       <div class="container forecast shadow p-4 mt-4" v-if="currentWeather && currentWeather.cod == 200">
         <div class="m-2"><strong>City:</strong> {{ currentWeather.name }}</div>
         <div class="m-2"><strong>Weather condition: </strong> <span class="weather-condition">{{ currentWeather.weather[0].description }}</span></div>
-        <div class="m-2"><strong>Temperature: </strong>{{ currentWeather.main.temp }}°C <span><img :src="this.currentIcon" alt="Weather Condition Representation Icon"></span></div>
+        <div class="m-2"><strong>Temperature: </strong>{{ currentWeather.main.temp }}° C <span><img :src="this.currentIcon" alt="Weather Condition Representation Icon"></span></div>
         <div class="m-2"><strong>Humidity: </strong> {{ currentWeather.main.humidity }}%.</div>
-        <div class="m-2"><strong>Wind Speed: </strong> {{ currentWeather.wind.speed }} km/h</div>
+        <div class="m-2"><strong>Pressure: </strong> {{ currentWeather.main.pressure }} hpa</div>
+        <div class="m-2"><strong>Wind Speed: </strong> {{ currentWeather.wind.speed }} m/s</div>
         <div class="m-2"><strong>Geo coords: </strong> <span>Lattitude:</span>{{ currentWeather.coord.lat }} || <span>Longitude:</span> {{ currentWeather.coord.lon }}</div>
+        
       </div>
-      <div v-if="currentCity == null">
-        "{{ currentCity }}" is bro
+      <div v-else>
+        "{{ currentCity }}" is not a valid.
       </div>
     </div>
   </div>
@@ -45,7 +47,7 @@ export default {
       // current city
       currentCity: 'Montreal',
       // current country
-      currentCountry: 'ca',
+      currentCountry: 'world',
       // current unit
       unit: 'metric',
       // current icon
@@ -56,10 +58,11 @@ export default {
   methods: {
     getWeather(){
       // Make axios request to open weather api
-      axios.get('https://api.openweathermap.org/data/2.5/weather?q=' + this.currentCity+ ',' +this.currentCountry + '&appid=fe435501a7f0d2f2172ccf5f139248f7&units=' + this.unit + '')
+      axios.get('https://api.openweathermap.org/data/2.5/weather?q=' + this.currentCity+ ',' + this.currentCountry + '&appid=fe435501a7f0d2f2172ccf5f139248f7&units=' + this.unit + '')
       .then((response) => {
           // takes response object & stores it in currentWeather
           this.currentWeather = response.data
+          // takes value for image icon
           this.currentIcon = 'https://openweathermap.org/img/w/' + this.currentWeather.weather[0].icon + '.png'
       })
       .catch(function (error) {
