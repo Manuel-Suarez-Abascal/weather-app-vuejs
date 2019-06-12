@@ -9,7 +9,9 @@
       <!-- Input field value -->
       <b-row class="justify-content-center mt-4">
         <b-col col xl="3" lg="3" md="4" sm="12" cols="12">
-          <b-form-input value="" aria-label="Input to select city" type="text" v-model.lazy="currentCity" @change="getWeather" placeholder="Enter a valid city"></b-form-input>
+          <b-form @submit.prevent="getWeather">
+            <b-form-input value="" aria-label="Input to select city" type="text" v-model.lazy="currentCity" placeholder="Enter a valid city"></b-form-input>
+          </b-form>
         </b-col>
       </b-row>
 
