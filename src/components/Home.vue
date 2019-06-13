@@ -1,5 +1,5 @@
 <template>
-  <div class="home container">
+  <div class="home container animated fadeIn delay-4">
     <h1>{{ msg }}</h1>
     <div class="home app-title my-3">
       <p class="m-2">A weather app built <a class="vuejs-link text-decoration-none" href="https://vuejs.org/" target="_blank" rel="noopener">Vuejs</a> & <a class="open-weather-api-link text-decoration-none" href="https://openweathermap.org/" target="_blank" rel="noopener">Open Weather App.</a></p>
@@ -124,5 +124,43 @@ a {
 
 .weather-condition {
   text-transform: capitalize
+}
+
+/* Animation fadeIn onload from animate.css */
+.animated {
+  -webkit-animation-duration: 1.7s;
+  animation-duration: 1.7s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.animated.delay-4s {
+  -webkit-animation-delay: 4s;
+  animation-delay: 4s;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
 }
 </style>
