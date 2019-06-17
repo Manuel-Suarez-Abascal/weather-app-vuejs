@@ -4,21 +4,23 @@
     <div v-if="loading">
       <load-animation />
     </div>
-    <!-- Home Component -->
+    <!-- Forecast Component -->
     <div v-else>
-      <Home msg="Worldwide Cities Weather App" />
+      <forecast msg="Worldwide Cities Weather App" />
     </div> 
   </div>
 </template>
 
 <script>
-import Home from "./components/Home.vue";
+// import forecast component
+import Forecast from "./components/Forecast.vue";
+// import loading animation component
 import LoadAnimation from "./components/LoadAnimation.vue"
 
 export default {
   name: "app",
   components: {
-    Home,
+    Forecast,
     LoadAnimation
   },
   data(){
