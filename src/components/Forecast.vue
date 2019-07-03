@@ -1,5 +1,13 @@
 <template>
   <div class="forecast container animated fadeIn delay-4">
+    <!-- Burger Menu Component which takes you to wikipedia -->
+    <Slide right>
+        <span>
+          Read about:  
+          <a class="text-white ml-2" :href="this.wikipediaLink + currentWeather.name" target="_blank">{{ currentWeather.name }}</a>
+        </span>
+    </Slide>
+    
     <h1>{{ msg }}</h1>
     <div class="forecast app-title my-3">
       <p class="m-2">A weather app built <a class="vuejs-link text-decoration-none" href="https://vuejs.org/" target="_blank" rel="noopener">Vue.js</a> & <a class="open-weather-api-link text-decoration-none" href="https://openweathermap.org/" target="_blank" rel="noopener">OpenWeatherMap API.</a></p>
@@ -36,8 +44,14 @@
 <script>
 // import Axios
 import axios from "axios"
-
+// import the CSS transitions you wish to use, in this case we are using `Slide`
+import { Slide } from 'vue-burger-menu'  
+ 
 export default {
+  components: {
+    // Registered burger menu as child component
+    Slide
+  },
   name: "Forecast",
   props: {
     msg: String,
@@ -53,7 +67,9 @@ export default {
       // current unit
       unit: 'metric',
       // current icon
-      currentIcon: null
+      currentIcon: null,
+      // wikipedia url
+      wikipediaLink: 'https://en.wikipedia.org/wiki/'
     }
     this.$set(this.currentCity);
   },
@@ -64,6 +80,7 @@ export default {
       .then((response) => {
           // takes response object & stores it in currentWeather
           this.currentWeather = response.data
+          console.log(this.currentWeather)
           // takes value for image icon
           this.currentIcon = 'https://openweathermap.org/img/w/' + this.currentWeather.weather[0].icon + '.png'
       })
