@@ -1,4 +1,4 @@
-# weather-app-vuejs
+# weather-forecast-vue
 
 Check the [demo here](https://manuel-suarez-abascal.github.io/weather-app-vuejs/)
 
