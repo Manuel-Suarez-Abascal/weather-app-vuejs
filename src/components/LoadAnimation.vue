@@ -1,10 +1,10 @@
 <template>
-    <div class="animation__loading">
-      <div class="animation__loading__bar">
-        <span class="animation__loading__bar-fill"></span>
-        <span class="animation__loading__bar-inside"></span>       
-      </div>
+  <div class="animation__loading">
+    <div class="animation__loading__bar">
+      <span class="animation__loading__bar-fill"></span>
+      <span class="animation__loading__bar-inside"></span>       
     </div>
+  </div>
 </template>
 
 <script>
