@@ -81,7 +81,6 @@ export default {
       .then((response) => {
           // takes response object & stores it in currentWeather
           this.currentWeather = response.data
-          console.log(this.currentWeather)
           // takes value for image icon
           this.currentIcon = 'https://openweathermap.org/img/w/' + this.currentWeather.weather[0].icon + '.png'
       })
