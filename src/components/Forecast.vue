@@ -26,6 +26,7 @@
       <!-- Forecast stat values -->
       <div class="container forecast shadow p-4 mt-4" v-if="currentWeather && currentWeather.cod == 200">
         <div class="m-2"><strong>City:</strong> {{ currentWeather.name }}</div>
+        <div class="m-2"><strong>ISO Country Code:</strong> {{ currentWeather.sys.country }}</div>
         <div class="m-2"><strong>Weather condition: </strong> <span class="weather-condition">{{ currentWeather.weather[0].description }}</span></div>
         <div class="m-2"><strong>Temperature: </strong>{{ currentWeather.main.temp }}° C <span><img :src="this.currentIcon" alt="Weather Condition Representation Icon"></span></div>
         <div class="m-2"><strong>Humidity: </strong> {{ currentWeather.main.humidity }}%.</div>
@@ -80,7 +81,6 @@ export default {
       .then((response) => {
           // takes response object & stores it in currentWeather
           this.currentWeather = response.data
-          console.log(this.currentWeather)
           // takes value for image icon
           this.currentIcon = 'https://openweathermap.org/img/w/' + this.currentWeather.weather[0].icon + '.png'
       })

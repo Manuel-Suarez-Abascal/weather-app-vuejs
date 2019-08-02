@@ -53,4 +53,8 @@ export default {
   color: #7088a0;
   margin-top: 60px;
 }
+p {
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 1px;
+}
 </style>
