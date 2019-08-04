@@ -6,16 +6,15 @@
     </div>
     <!-- Forecast Component -->
     <div v-else>
-      <forecast msg="Worldwide Cities Weather App" />
-    </div> 
+      <forecast />
+    </div>
   </div>
 </template>
 
 <script>
-// import forecast component
+// import forecast & LoadAnimation component
+import LoadAnimation from "./components/LoadAnimation.vue";
 import Forecast from "./components/Forecast.vue";
-// import loading animation component
-import LoadAnimation from "./components/LoadAnimation.vue"
 
 export default {
   name: "app",
@@ -23,23 +22,23 @@ export default {
     Forecast,
     LoadAnimation
   },
-  data(){
+  data() {
     return {
       // Onload animation is true
       loading: true
-    }
+    };
   },
   methods: {
     // Sets loading to false & ends loading animation
     endLoadAnimation() {
       setTimeout(() => {
-        this.loading = false
-      }, 1500)
+        this.loading = false;
+      }, 1500);
     }
   },
   mounted() {
     // Call function to end animation onload
-    this.endLoadAnimation()
+    this.endLoadAnimation();
   }
 };
 </script>
@@ -54,7 +53,7 @@ export default {
   margin-top: 60px;
 }
 p {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   letter-spacing: 1px;
 }
 </style>
