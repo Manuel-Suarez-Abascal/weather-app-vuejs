@@ -2,21 +2,21 @@
   <div class="animation__loading">
     <div class="animation__loading__bar">
       <span class="animation__loading__bar-fill"></span>
-      <span class="animation__loading__bar-inside"></span>       
+      <span class="animation__loading__bar-inside"></span>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'LoadAnimation',
-}
+  name: "LoadAnimation"
+};
 </script>
 
 <style lang="scss" scoped>
 .animation__loading {
   margin-top: 40vh;
-  padding:0;
+  padding: 0;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
@@ -28,7 +28,7 @@ export default {
     &-fill {
       border-radius: 5px;
       margin: auto;
-      background: #4CA1AF;
+      background: #4ca1af;
       width: 200px;
       height: 40px;
       display: block;
@@ -43,7 +43,7 @@ export default {
       background: #fff;
       width: 190px;
       height: 30px;
-      display: block; 
+      display: block;
       z-index: 3;
       position: absolute;
       top: 5px;
@@ -61,7 +61,7 @@ export default {
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
   }
-  10%{
+  10% {
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
   }
@@ -70,10 +70,10 @@ export default {
   }
 }
 .bounce-enter-active {
-  animation: bounce-in .5s;
+  animation: bounce-in 0.5s;
 }
 .bounce-leave-active {
-  animation: bounce-in .5s reverse;
+  animation: bounce-in 0.5s reverse;
 }
 @keyframes bounce-in {
   0% {
