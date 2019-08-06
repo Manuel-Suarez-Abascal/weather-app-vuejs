@@ -45,6 +45,8 @@ npm run test
 ```
 npm run lint
 ```
+## Future Features
 
+- Add local time.
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
